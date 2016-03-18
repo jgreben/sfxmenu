@@ -1,5 +1,6 @@
 *.tmpl[0-9]*
 *.tmpl_*[0-9]*
+*bak
 grouping_no.tmpl
 verde_error.tmpl
 access_denied.tmpl
