@@ -1,4 +1,4 @@
-*.tmpl[0-9]+[a-z]*
+*.tmpl[0-9]+
 grouping_no.tmpl
 verde_error.tmpl
 access_denied.tmpl
