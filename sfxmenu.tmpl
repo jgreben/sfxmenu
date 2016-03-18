@@ -1,0 +1,181 @@
+<!--
+SFX (tm) menu HTML template
+Copyright Ex Libris Inc. (2004)
+Version: $Id: sfxmenu.tmpl,v 1.46 2010/05/03 09:19:28 erez Exp $
+//-->
+<HTML lang="en">
+<HEAD>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" >
+    <TITLE>Find it at Stanford</TITLE>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta name="description" content="Stanford University Libraries Link Resolver." />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <META HTTP-EQUIV="expires" CONTENT="Sat, 27 Sep 1980 08:21:57 GMT">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META NAME="ROBOTS" CONTENT="NONE">
+    <META NAME="GOOGLEBOT" CONTENT="NOARCHIVE">
+	
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <LINK REL="stylesheet" TYPE="text/css" href="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/css/public/style.css">
+    <LINK REL="stylesheet" TYPE="text/css" href="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/css/bx/bx.css">	
+    <link href="https://www.stanford.edu/su-identity/css/su-identity.css" rel="stylesheet">
+    <LINK REL="stylesheet" TYPE="text/css" href="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/css/sul-basic.css">	
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      	
+	<SCRIPT type="text/javascript" LANGUAGE="JavaScript" src="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/js/sfxmenu/main.js"></SCRIPT>
+     <SCRIPT type="text/javascript" LANGUAGE="JavaScript" src="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/js/sfxmenu/gbs.js"></SCRIPT>
+    <!-- verde info button -->
+    <SCRIPT type="text/javascript" LANGUAGE="JavaScript" src="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/js/sfxmenu/Popup.js"></SCRIPT>
+    <!-- end verde info -->
+<!-- <TMPL_VAR NAME='OPENURL'> //-->
+<!-- <TMPL_VAR NAME='CTX_OBJECT'> //-->
+	<SCRIPT type="text/javascript" LANGUAGE="JavaScript" src="/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/js/sfxmenu/open_link.js"></script>
+</HEAD>
+<BODY LEFTMARGIN="0" TOPMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+  <div id="su-wrap">
+      <div id="su-content">
+	<div id="topnav-container" class="container-fluid">
+
+    <!-- verde info button -->
+<div id="dragDiv"  class="Popup"></div>
+    <!-- end verde info -->
+<input type="hidden" id="basic_target_count" value=<TMPL_VAR BASIC_TARGET_COUNT>>
+<input type="hidden" id="advanced_target_count" value=<TMPL_VAR ADVANCED_TARGET_COUNT>>
+<input type="hidden" id="gbs_threshold_type" value=<TMPL_VAR GBS_THRESHOLD_TYPE>>
+<!-- in the next line, i removed the height info from the global version to get the maximize button to work properly. hjt 2/8/08 -->
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER=0 WIDTH="100%">
+     <TR>
+        <TD>
+
+
+<div id="topnav-container">
+ <header id="topnav" class="header-logo" role="banner">
+  <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%">
+        <TR height="38" bgcolor="FFFFFF"> 
+        <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://library.stanford.edu" TARGET="_self" class="graphics"><IMG SRC="/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/img/sfxmenu/logo.png" ALIGN="MIDDLE" WIDTH="303" HEIGHT="25" BORDER="0" ALT="Stanford University Libraries"></a></TD>
+
+        </TR>
+  </TABLE>
+ </header>
+</div>
+
+    <TR>
+       <td>
+
+	<table width=100%><tr class="BlockSFXMenu">
+
+		<td class="header-links" style="padding-left:55px;">
+	<a href="http://library.stanford.edu" TARGET="_self">Library Home Page</a>
+<!--&nbsp;&nbsp;&nbsp;&#62;&nbsp;&nbsp;&nbsp;<a href="http://sul-sfx.stanford.edu/sfxtst41/az" TARGET="_self">eJournals</a>&nbsp;&nbsp;&nbsp;&#62;&nbsp;&nbsp;&nbsp;find it&nbsp; @&nbsp; Stanford
+-->
+		</td>
+            	<td class="header-links" align="right" style="padding-right:35px">
+	<a href="http://library.stanford.edu/ask/email/connection-problems" TARGET="_blank" title="(opens in a new window)">Report a connection problem</a></td></tr></table>
+</div>
+	<div class="topnav-divider"></div>
+	</TD>
+    </TR>
+
+
+        </TD>
+    </TR>
+
+<!-- remove language menu
+    <TR>
+        <FORM name="lng_form">
+              <TD HEIGHT="18" ALIGN="RIGHT">
+                Language
+                <SELECT NAME="language" onChange=set_user_profile()>
+                    <OPTION value="English"<TMPL_VAR NAME='English' ESCAPE='HTML'>>English</OPTION>
+                    <OPTION value="Dutch"<TMPL_VAR NAME='Dutch' ESCAPE='HTML'>>Dutch</OPTION>
+                    <OPTION value="Spanish"<TMPL_VAR NAME='Spanish' ESCAPE='HTML'>>Spanish</OPTION>
+                </SELECT>
+        </TD>
+        </FORM>
+    </TR>
+end language menu -->
+
+
+    <TMPL_IF xss>
+            <TR>
+                <TD><br><p><font size="3px">&nbsp;XSS violation occurred.</font></p></br></TD>
+            </TR>
+        </TMPL_IF>
+    <TR>
+        <TD style="padding-left:10px">
+            <table cellpadding=0 cellspacing=0 width="100%">
+
+		<tr><td colspan="2"><h1 class="PageTitleSFXMenu" style="font-size: 122%;">How to get this item:</h1></td></tr>
+	            <tr>
+	            	<td>
+	            <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+	                <TMPL_INCLUDE banner.tmpl>
+	            </TABLE>
+	            	</td>
+		        	<td align="right">
+				        <TMPL_IF SHOW_THUMBNAIL>
+			            <div id="thumbnail_div" style="display:none">
+				        	<a href="<TMPL_VAR BIBKEY_INFO>" id="gbs_thumbnail"><img src="<TMPL_VAR BIBKEY_THUMBNAIL>" alt=""></a>
+						</div>
+						</TMPL_IF>
+			        </td>			        
+				</tr>
+			</table>
+    
+        </TD>
+        
+    </TR>
+    <TMPL_IF NO_SERVICES>
+        <TR>
+            <TD class="LabelHighlight" align="center">
+                <TMPL_VAR NAME='NO_SERVICES' ESCAPE='HTML'>
+            </TD>
+        </TR>
+    <TMPL_ELSE>
+        <TR>
+            <TD style="padding-left:10px; padding-top:5px">
+                <TMPL_IF GROUPING_ENABLED>
+                    <TMPL_INCLUDE grouping_yes.tmpl>
+                <TMPL_ELSE>
+                    <TMPL_INCLUDE grouping_no.tmpl>
+                </TMPL_IF>
+            </TD>
+        </TR>
+    </TMPL_IF>
+
+        <TR>
+	<TD class="Footer" style="padding-left:29; font-style: italic;">
+	&copy; 2015 SFX by Ex Libris Inc.&nbsp;&nbsp;&nbsp;
+	<a href="http://library.stanford.edu/about_sulair/termsofuse.html" TARGET="_blank" title="(opens in a new window)">Terms of Use</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="http://www.crossref.org" TARGET="_blank" title="(opens in a new window)">CrossRef Enabled</a><br><br><br>
+	</TD>
+    </TR>
+</TABLE>
+<TMPL_IF NAME='BIBKEY'>
+	<!-- Send request to Google Book Search server -->
+	<script type="text/javascript" src="https://www.googleapis.com/books/v1/volumes?&q=<TMPL_VARNAME='BIBKEY'><TMPL_VARNAME="API_KEY_STRING">&callback=ProcessNewGBSBookInfo">
+    </script>
+</TMPL_IF>
+    <TMPL_IF NAME='BEACON_URL'>
+        <img src="<TMPL_VAR NAME='BEACON_URL' ESCAPE='HTML'>" style="display:none"/>
+    </TMPL_IF>
+
+<!-- Mouseflow code. Uncomment this section if you copy this file to sfxlcl41. -->
+<!--
+<script type="text/javascript">
+   var _mfq = _mfq || [];
+   (function() {
+       var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+       mf.src = "//cdn.mouseflow.com/projects/7018c2f5-a161-4fec-9e2a-e9d7acc0cc75.js";
+       document.getElementsByTagName("head")[0].appendChild(mf);
+   })();
+</script>
+-->
+</div> <!-- #main-container end -->
+
+</div> <!-- #su-content end -->
+</div> <!-- #su-wrap end -->
+</BODY>
+</HTML>

@@ -1,0 +1,285 @@
+<table id="service_type_header_<TMPL_VAR NAME='SERVICE_INTERNAL_NAME'>" cellpadding="0" cellspacing="0" border="0" width="100%" align=center>
+    <tr>
+        <td><h2 class="BlockTitleSFXMenu" style="font-size: 112%;"><TMPL_VAR NAME='SERVICE'></h2></td>
+    </tr>
+
+<TMPL_LOOP NAME='RELATED_OBJECT_GROUP'>
+<TMPL_IF NAME='IS_RELATED'>
+<TR>
+<TD><h3 class="Banner" style="font-weight:normal; font-size:90%; padding:1px 0px 0px 6px">
+<span valign="top" style="padding-left:9px"><TMPL_VAR NAME='RELATION_MESSAGE_PREFIX'><TMPL_VAR NAME='RELATION_TYPE'>:&nbsp;&nbsp;<TMPL_VAR NAME='RELATED_OBJECT_TITLE'>&nbsp;&nbsp;[<TMPL_VAR NAME='RELATED_OBJECT_ISSN'>]&nbsp;&nbsp;<TMPL_VAR NAME='AUTHOR'></span>
+</h3></TD>
+</TR>
+</TMPL_IF>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" BORDER="0" width="100%">
+                <TMPL_LOOP NAME='TARGETS'>
+    
+                    <form METHOD=GET
+                            ACTION="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/cgi/core/sfxresolver.cgi"
+                            NAME="<TMPL_VAR NAME='FORM'>"
+                            TARGET="<TMPL_VAR NAME='LINK_TARGET_ATTRIBUTE'>">
+                        <TMPL_VAR NAME='NAME' ESCAPE='HTML'>
+                        <tr id="tr_1_<TMPL_VAR NAME='FORM'>" class="BlockSFXMenu" style="padding-left:28px">
+                            <td style="padding-left:28px">
+<!-- hidden fields section -->
+<!-- The hidden fields are fields sent by the cgi and are used by the
+     sfxresolver.cgi to present the actual target.
+-->
+                                <TMPL_VAR NAME='HIDDEN_FIELDS'>
+<!-- end hidden fields section -->
+
+
+<!-- target name section -->
+<!-- The target name section is related to the target-specific html section by
+     the 'GO' button.  This button is dependent on the existence of the
+     target-specific information.  Please read the target-specific html section's
+     comment.
+-->
+                                <table border=0>
+                                    	<tr>
+                                        <td nowrap width="1%" class="Label"><TMPL_VAR NAME='SERVICE_NAME'>
+
+<TMPL_IF IS_LINKABLE>
+<A class="btn btn-default btn-lg" HREF="javascript:openSFXMenuLink(this,'<TMPL_VAR NAME=FORM>');" title="(opens in a new window)"><TMPL_VAR NAME='TARGET_NAME'></A>
+<TMPL_ELSE>
+<span class="LabelHighlightInner"><TMPL_VAR NAME='TARGET_NAME'></span>
+</TMPL_IF>
+</td>
+
+                                        <TMPL_IF GO_BUTTON_ON_TOP>  
+
+                                        	<td class="siteDown">
+                                                <TMPL_IF IS_LINKABLE>
+
+&nbsp;&nbsp;<input title="<TMPL_VAR ESCAPE=HTML NAME='TARGET_NAME'> (opens in a new window)" aria-label="<TMPL_VAR ESCAPE=HTML NAME='TARGET_NAME'> (opens in a new window)" type=button value="Go" onclick="javascript:openSFXMenuLink(this, '<TMPL_VAR NAME=FORM>', undefined, '<TMPL_VAR NAME=LINK_TARGET_ATTRIBUTE>');" class="buttonJV"; style="margin-top:7PX;">
+
+                                                <TMPL_ELSE>
+                                                    <TMPL_IF SITE_DOWN>
+                                                        site down;
+                                                    </TMPL_IF>
+                                                </TMPL_IF>
+                                            </td>
+
+
+											<TMPL_UNLESS TARGET_HTML>
+		                                        <TMPL_IF VERDE_INFO>
+                                        <!-- verde info button -->
+
+                                        <TMPL_IF VERDE_REMOTE>
+                                        <td>
+                                        <a href="javascript:void(0)" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=<TMPL_VAR VERDE_REMOTE>?portfolio_id=<TMPL_VAR PORTFOLIO_ID>&locale=<TMPL_VAR LOCALE> HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"><img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/info.gif" border="0" alt=""></a>
+                                        </td>
+                                        <TMPL_ELSE>
+                                        <td>
+                                        <a href="javascript:void(0)" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/cgi/core/verde_info.cgi?portfolio_id=<TMPL_VAR PORTFOLIO_ID>&locale=<TMPL_VAR LOCALE> HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"><img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/info.gif" border="0" alt=""></a>
+                                        </td>
+                                        </TMPL_IF>
+                                        <!-- end verde info -->
+                                        </TMPL_IF>
+											</TMPL_UNLESS>
+                                        <TMPL_ELSE> 
+                                        <TMPL_UNLESS TARGET_HTML>
+
+<!--
+                                            <td class="siteDown">
+                                                <TMPL_IF IS_LINKABLE>
+                                                  <a class="graphics" href="javascript:openSFXMenuLink(this,'<TMPL_VAR NAME=FORM>', undefined, '<TMPL_VAR NAME=LINK_TARGET_ATTRIBUTE>');">&nbsp;&nbsp;<IMG
+                                                     SRC="<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/img/sfxmenu/ico_go_top4.bmp"
+                                                     WIDTH="32" HEIGHT="22" BORDER="0" ALT="GO" align="top"></A>
+                                                <TMPL_ELSE>
+                                                    <TMPL_IF SITE_DOWN>
+                                                        site down;
+                                                    </TMPL_IF>
+                                                </TMPL_IF>
+                                            </td>
+-->
+
+
+                                        <TMPL_IF VERDE_INFO>
+                                        <!-- verde info button -->
+
+                                        <TMPL_IF VERDE_REMOTE>
+                                        <td>
+                                        <a href="javascript:void(0)" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=<TMPL_VAR VERDE_REMOTE>?portfolio_id=<TMPL_VAR PORTFOLIO_ID>&locale=<TMPL_VAR LOCALE> HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"><img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/info.gif" border="0" alt=""></a>
+                                        </td>
+                                        <TMPL_ELSE>
+                                        <td>
+                                        <a href="javascript:void(0)" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/cgi/core/verde_info.cgi?portfolio_id=<TMPL_VAR PORTFOLIO_ID>&locale=<TMPL_VAR LOCALE> HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"><img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/info.gif" border="0" alt=""></a>
+                                        </td>
+                                        </TMPL_IF>
+                                        <!-- end verde info -->
+                                        </TMPL_IF>
+                                        </TMPL_UNLESS>
+                                        </TMPL_IF>  
+                                    </tr>
+                                </table>
+<!-- end target name section -->
+                            </td>
+                        </tr>
+
+<!-- object thresholds -->
+                        <TMPL_LOOP PARSE_DATE>
+                          <TMPL_IF THRESH_GREATOR>
+                            <TMPL_IF THRESH_UNRELATED>
+                                <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                                  <td nowrap style="padding:1px 0px 3px 43px;">
+                                    From
+                                        <TMPL_IF THRESH_YEAR><TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_VOLUME>, volume <TMPL_VAR NAME='THRESH_VOLUME' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_ISSUE>: issue <TMPL_VAR NAME='THRESH_ISSUE' ESCAPE='HTML'></TMPL_IF>
+                                  </td>
+                                </tr>
+                            </TMPL_IF>
+                            <TMPL_IF THRESH_LOWER_LIMIT>
+                                <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                                  <td nowrap style="padding:1px 0px 3px 43px;">
+                                    From
+                                        <TMPL_IF THRESH_YEAR><TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_VOLUME>, volume <TMPL_VAR NAME='THRESH_VOLUME' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_ISSUE>: issue <TMPL_VAR NAME='THRESH_ISSUE' ESCAPE='HTML'></TMPL_IF>
+                            </TMPL_IF>
+                          </TMPL_IF>
+                        
+                          <TMPL_IF THRESH_LESS>
+                            <TMPL_IF THRESH_UNRELATED>
+                                <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                                  <td nowrap style="padding:1px 0px 3px 43px;">
+                                    Until
+                                        <TMPL_IF THRESH_YEAR><TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_VOLUME>, volume <TMPL_VAR NAME='THRESH_VOLUME' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_ISSUE>: issue <TMPL_VAR NAME='THRESH_ISSUE' ESCAPE='HTML'></TMPL_IF>
+                                  </td>
+                                </tr>
+                            </TMPL_IF>
+                            <TMPL_IF THRESH_UPPER_LIMIT>
+                                    &nbsp;until&nbsp;
+                                        <TMPL_IF THRESH_YEAR><TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_VOLUME>, volume <TMPL_VAR NAME='THRESH_VOLUME' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_ISSUE>: issue <TMPL_VAR NAME='THRESH_ISSUE' ESCAPE='HTML'></TMPL_IF>
+                                  </td>
+                                </tr>
+                            </TMPL_IF>
+                          </TMPL_IF>
+                        <TMPL_IF THRESH_EQUAL>
+                            <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                              <td nowrap style="padding:1px 0px 3px 43px;">
+                            Available in
+                                        <TMPL_IF THRESH_YEAR><TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_VOLUME>, volume <TMPL_VAR NAME='THRESH_VOLUME' ESCAPE='HTML'></TMPL_IF><TMPL_IF THRESH_ISSUE>: issue <TMPL_VAR NAME='THRESH_ISSUE' ESCAPE='HTML'></TMPL_IF>
+                                  </td>
+                                </tr>
+                        </TMPL_IF>
+                        </TMPL_LOOP>
+                        <TMPL_LOOP TIME_DIFF>
+                          <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                            <td nowrap style="padding:0px 0px 3px 43px;">
+                                <TMPL_IF AVAILABLE>
+                                  Most recent
+                                        <TMPL_IF THRESH_YEAR>  <TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'>  year(s)</TMPL_IF><TMPL_IF THRESH_MONTH> <TMPL_VAR NAME='THRESH_MONTH' ESCAPE='HTML'> month(s)</TMPL_IF>
+                                        available
+                                </TMPL_IF>
+                                <TMPL_IF NOT_AVAILABLE>
+                                  Most recent
+                                        <TMPL_IF THRESH_YEAR>  <TMPL_VAR NAME='THRESH_YEAR' ESCAPE='HTML'>  year(s)</TMPL_IF><TMPL_IF THRESH_MONTH> <TMPL_VAR NAME='THRESH_MONTH' ESCAPE='HTML'> month(s)</TMPL_IF>
+                                        not available
+                                </TMPL_IF>
+                            </td>
+                          </tr>
+                        </TMPL_LOOP>
+                        <TMPL_IF TIMEDIFF_WARNING>
+                        	<tr class="BlockSFXMenu" style="padding-left: 28px;">
+                            	<td nowrap style="padding:0px 0px 3px 43px;">
+                        			<TMPL_IF EMBARGO>This article may not be available because of an embargo period.</TMPL_IF>
+                        			<TMPL_IF MOVING_WALL>This article may not be available because of the rolling year coverage.</TMPL_IF>
+                        			<TMPL_IF TIMEDIFF_WARNING_TOOLTIP>
+	                        			<TMPL_IF EMBARGO>
+	                        				<img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/question_mark.gif"
+	                        					 title="An embargo is a time period for which a journal is not available in a full text database. Embargos allow publishers to make available their most recent journal articles only via journal subscription/pay per view, while older content is made available in aggregator full text databases."
+	                        					 alt="An embargo is a time period for which a journal is not available in a full text database. Embargos allow publishers to make available their most recent journal articles only via journal subscription/pay per view, while older content is made available in aggregator full text databases.">
+    	                    			</TMPL_IF>
+        	                			<TMPL_IF MOVING_WALL>
+        	                				<img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/question_mark.gif"
+        	                					 title="A rolling year is any period of 12 consecutive months for which coverage is available."
+        	                					 alt="A rolling year is any period of 12 consecutive months for which coverage is available.">
+        	                			</TMPL_IF>
+                	        		</TMPL_IF>
+                    	        </td>
+                    		</tr>
+                    	</TMPL_IF>
+<!-- end object thresholds -->
+
+<!-- extra comments -->
+                        <TMPL_IF NOTE>
+                            <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                                <td nowrap style="padding:0px 0px 5px 43px;">
+                                    <TMPL_VAR NAME='NOTE'>
+                                </td>
+                            </tr>
+                        </TMPL_IF>
+                        <TMPL_IF AUTHENTICATION>
+                            <tr class="BlockSFXMenu" style="padding-left: 28px;">
+                                <td nowrap style="padding:0px 0px 3px 43px;">
+                                    Authentication: <TMPL_VAR NAME='AUTHENTICATION'>
+                                </td>
+                            </tr>
+                        </TMPL_IF>
+<!-- end extra comments -->
+
+<!-- target-specific html -->
+<!-- The target-specific html comes from the corresponding target displayer.
+     It is not always present, so it requires a TMPL_IF.  It is IMPORTANT TO NOTE
+     that if this is present the 'GO' button is printed right after it;  if not,
+     it is printed in the same line as the target name (see target name section).
+-->
+                        <TMPL_IF TARGET_HTML>
+                            <tr id="tr_2_<TMPL_VAR NAME='FORM'>" class="BlockSFXMenuInput" style="padding-left: 28px;">
+                                <td style="padding-left: 41px;">
+                                    <table cellpadding="0" cellspacing="0" BORDER="0">
+                                        <tr>
+                                            <td><TMPL_VAR NAME='TARGET_HTML'></td>
+
+
+                                            <td class="siteDown">
+                                                <TMPL_UNLESS GO_BUTTON_ON_TOP>
+                                                        <TMPL_IF IS_LINKABLE>
+
+&nbsp;&nbsp;<input title="<TMPL_VAR ESCAPE=HTML NAME='TARGET_NAME'> (opens in a new window)" aria-label="<TMPL_VAR ESCAPE=HTML NAME='TARGET_NAME'> (opens in a new window)" type=button value="Go" onclick="javascript:openSFXMenuLink(this, '<TMPL_VAR NAME=FORM>', undefined, '<TMPL_VAR NAME=LINK_TARGET_ATTRIBUTE>');" class="buttonJV" style="margin-bottom:3PX;">
+
+                                                 <TMPL_ELSE>
+                                                    <TMPL_IF SITE_DOWN>
+                                                        site down
+                                                    </TMPL_IF>
+                                                    </TMPL_IF>
+                                                                                          </TMPL_UNLESS>
+
+                                            </td>
+
+
+                                        <TMPL_IF VERDE_INFO>
+                                        <!-- verde info button -->
+
+                                        <TMPL_IF VERDE_REMOTE>
+                                        <td>
+                                        <a href="javascript:void(0)" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=<TMPL_VAR VERDE_REMOTE>?portfolio_id=<TMPL_VAR PORTFOLIO_ID>&locale=<TMPL_VAR LOCALE> HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"><img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/info.gif" border="0" alt=""></a>
+                                        </td>
+                                        <TMPL_ELSE>
+                                        <td>
+                                        <a href="javascript:void(0)" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=<TMPL_VAR NAME='BASE'>/<TMPL_VAR NAME='INSTANCE' ESCAPE='HTML'>/cgi/core/verde_info.cgi?portfolio_id=<TMPL_VAR PORTFOLIO_ID>&locale=<TMPL_VAR LOCALE> HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"><img src="/<TMPL_VAR INSTANCE>/img/sfxmenu/info.gif" border="0" alt=""></a>
+                                        </td>
+                                        </TMPL_IF>
+                                        <!-- end verde info -->
+                                        </TMPL_IF>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </TMPL_IF>
+<!-- end target-specific html -->
+
+                        <tr>
+                            <td height="1">
+            <noscript><input title="(opens in a new window)" type="submit" value="<TMPL_VAR NAME='SERVICE_NAME'>&nbsp;<TMPL_VAR ESCAPE=HTML NAME='TARGET_NAME'>"></noscript>
+                            
+                            </td>
+                        </tr>
+
+                    </form>
+                </TMPL_LOOP>
+            </table>
+        <br></td>
+    </tr>
+</TMPL_LOOP>
+</table>

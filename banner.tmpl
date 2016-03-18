@@ -1,0 +1,148 @@
+<TMPL_IF BANNER_TYPE_1>
+    <TMPL_IF ATITLE>
+        <TR valign="top">
+            <TD><h1 class="Banner" style="font-weight:normal; font-size:98%; padding:0px 0px 0px 13px;">Article:&nbsp;&nbsp;<TMPL_VAR NAME="ATITLE" ESCAPE='HTML'></h1></TD>
+        </TR>
+    </TMPL_IF>
+    <TR valign="top">
+        <TD><h1 class="Banner" style="font-weight:normal; font-size:98%; padding:0px 0px 0px 13px;">
+			<TMPL_IF ORIGINAL>
+				Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="ORIGINAL" ESCAPE='HTML'>
+			<TMPL_ELSE>
+				<TMPL_IF BTITLE>
+					Book:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="BTITLE" ESCAPE='HTML'>
+				<TMPL_ELSE>
+				   <TMPL_IF TITLE>
+					   Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="TITLE" ESCAPE='HTML'>
+				   <TMPL_ELSE>
+					  <TMPL_IF STITLE>
+						 Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="STITLE" ESCAPE='HTML'>
+					  </TMPL_IF>
+				   </TMPL_IF>
+				</TMPL_IF>
+			</TMPL_IF>
+            <TMPL_IF ISBN>
+                &nbsp;&nbsp;[<TMPL_VAR NAME="ISBN" ESCAPE='HTML'>]
+            </TMPL_IF></h1></TD></TR>
+            <TR><TD align="left" style="padding:0px 0px 3px 13px;"><TMPL_IF AULAST>
+                <class="Banner" style="font-weight:normal; font-size:98%;">Author:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="AULAST" ESCAPE='HTML'></TMPL_IF><TMPL_IF AUFIRST>,&nbsp;<TMPL_ELSE><TMPL_IF AUINIT>,</TMPL_IF></TMPL_IF>
+            <TMPL_IF AUFIRST>
+                <TMPL_VAR NAME="AUFIRST" ESCAPE='HTML'>
+            <TMPL_ELSE>
+            	<TMPL_IF AUINIT>
+            		<TMPL_VAR NAME="AUINIT" ESCAPE='HTML'>
+            	</TMPL_IF>
+            </TMPL_IF>
+        </TD>
+    </TR>
+    <TR style="font-size:98%">
+        <TD align="left" style="padding:0px 0px 3px 13px;">
+            <TMPL_IF INST>
+                <class="Banner" style="font-weight:normal;"><TMPL_VAR NAME='INST' ESCAPE='HTML'>
+            </TMPL_IF>
+            <TMPL_IF YEAR>
+               <class="Banner" style="font-weight:normal;">Year:&nbsp;&nbsp;<TMPL_VAR NAME='YEAR' ESCAPE='HTML'>
+            </TMPL_IF>
+
+            <TMPL_IF EPAGE>
+                <class="Banner" style="font-weight:normal; padding:0px 0px 3px 13px;">Pages:&nbsp;&nbsp;<TMPL_VAR NAME='SPAGE' ESCAPE='HTML'>&nbsp;-&nbsp;<TMPL_VAR NAME='EPAGE' ESCAPE='HTML'>
+            <TMPL_ELSE>
+                <TMPL_IF SPAGE>
+                        <class="Banner" style="font-weight:normal; padding:0px 0px 3px 13px;">Page:&nbsp;&nbsp;<TMPL_VAR NAME='SPAGE' ESCAPE='HTML'>
+                </TMPL_IF>
+            </TMPL_IF>
+
+        </TD>
+    </TR>
+</TMPL_IF>
+
+
+<TMPL_IF BANNER_TYPE_2>
+    <TMPL_IF ATITLE>
+        <TR valign="top">
+            <TD><h1 class="Banner" style="font-weight:normal; font-size:98%; padding:0px 0px 0px 13px;">Article:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="ATITLE" ESCAPE='HTML'></h1></TD>
+        </TR>
+    </TMPL_IF>
+    <TR valign="top">
+        <TD><h1 class="Banner" style="font-weight:normal; font-size:98%; padding:0px 0px 0px 13px;">
+			<TMPL_IF ORIGINAL>
+				Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="ORIGINAL" ESCAPE='HTML'>
+			<TMPL_ELSE>
+				<TMPL_IF JTITLE>
+					Journal:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="JTITLE" ESCAPE='HTML'>
+				<TMPL_ELSE>
+				   <TMPL_IF TITLE>
+					   Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="TITLE" ESCAPE='HTML'>
+				   <TMPL_ELSE>
+					   <TMPL_IF STITLE>
+						   Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="STITLE" ESCAPE='HTML'>
+					   </TMPL_IF>
+				   </TMPL_IF>
+				</TMPL_IF>
+			</TMPL_IF>
+            <TMPL_IF ISSN>
+                &nbsp;&nbsp;[<TMPL_VAR NAME="ISSN" ESCAPE='HTML'>]
+            </TMPL_IF></h1></TD></TR>
+            <TR><TD align="left" style="padding:0px 0px 3px 13px;"><TMPL_IF AULAST>
+                <class="Banner" style="font-weight:normal; font-size:98%;">Author:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="AULAST" ESCAPE='HTML'></TMPL_IF><TMPL_IF AUFIRST>,&nbsp;<TMPL_ELSE><TMPL_IF AUINIT>,</TMPL_IF></TMPL_IF>
+            <TMPL_IF AUFIRST>
+                <TMPL_VAR NAME="AUFIRST" ESCAPE='HTML'>
+            <TMPL_ELSE>
+            	<TMPL_IF AUINIT>
+            		<TMPL_VAR NAME="AUINIT" ESCAPE='HTML'>
+            	</TMPL_IF>
+            </TMPL_IF>
+        </TD>
+    </TR>
+    <TR style="font-size:98%;">
+        <TD align="left" style="padding:0px 0px 3px 13px;">
+            <TMPL_IF YEAR>
+                <class="Banner">Year:&nbsp;&nbsp;<TMPL_VAR NAME='YEAR' ESCAPE='HTML'>&nbsp;&nbsp;&nbsp;&nbsp;
+            </TMPL_IF>
+            <TMPL_IF VOLUME>
+                <class="Banner">Volume:&nbsp;&nbsp;<TMPL_VAR NAME='VOLUME' ESCAPE='HTML'>&nbsp;&nbsp;&nbsp;&nbsp;
+            </TMPL_IF>
+            <TMPL_IF ISSUE>
+                <class="Banner">Issue:&nbsp;&nbsp;<TMPL_VAR NAME='ISSUE' ESCAPE='HTML'>&nbsp;&nbsp;&nbsp;&nbsp;
+            </TMPL_IF>
+
+            <TMPL_IF EPAGE>
+                <class="Banner">Pages:&nbsp;&nbsp;<TMPL_VAR NAME='SPAGE' ESCAPE='HTML'>&nbsp;-&nbsp;<TMPL_VAR NAME='EPAGE' ESCAPE='HTML'>
+            <TMPL_ELSE>
+                <TMPL_IF SPAGE>
+                        <class="Banner" style="padding:0px 0px 3px 13px;">Page:&nbsp;&nbsp;<TMPL_VAR NAME='SPAGE' ESCAPE='HTML'>
+                </TMPL_IF>
+            </TMPL_IF>
+
+        </TD>
+    </TR>
+</TMPL_IF>
+
+<TMPL_IF BANNER_TYPE_3>
+    <TR valign="top">
+        <TD><h1 class="Banner" style="font-weight:normal; font-size:98%; padding:0px 0px 3px 13px;">
+            <TMPL_IF TITLE>
+                Title:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME="TITLE" ESCAPE='HTML'>
+            </TMPL_IF>
+            <TMPL_IF NUMBER>
+                [<TMPL_VAR NAME="NUMBER" ESCAPE='HTML'>]
+            </TMPL_IF>
+            <TMPL_IF INVLAST >
+                <TMPL_VAR NAME='INVLAST' ESCAPE='HTML'>
+            </TMPL_IF>
+            <TMPL_IF YEAR >
+                Year:&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME='YEAR' ESCAPE='HTML'>
+            </TMPL_IF>
+         </h1></TD>
+    </TR>
+</TMPL_IF>
+
+<TMPL_IF NAME="COINS_CTX_OBJ">
+    <tr valign="top">
+    <td><class="Banner" colspan="2" style="font-weight:normal; font-size:98%; padding:0px 0px 3px 13px;">
+    <!-- COinS representation -->
+    <span class="Z3988" title="<TMPL_VAR ESCAPE=HTML NAME="COINS_CTX_OBJ">"> </span>
+    </td>
+    </tr>
+</TMPL_IF>
+
